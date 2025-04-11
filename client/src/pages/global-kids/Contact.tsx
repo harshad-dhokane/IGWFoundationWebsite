@@ -25,8 +25,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-pink-50 py-16 md:py-24" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-pink-50 via-rose-50 to-orange-50 py-16 md:py-24" ref={sectionRef}>
+      {/* Playful floating shapes */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-pink-200/40 rounded-full blur-xl animate-float"></div>
+      <div className="absolute top-40 right-20 w-32 h-32 bg-rose-200/40 rounded-star blur-xl animate-float-delayed"></div>
+      <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-orange-200/40 rounded-heart blur-xl animate-bounce-slow"></div>
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative">
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}

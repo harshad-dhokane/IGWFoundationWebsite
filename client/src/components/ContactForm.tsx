@@ -99,7 +99,15 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                   <Input 
                     placeholder="Enter your full name" 
                     {...field} 
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 shadow-sm"
+                    className={`w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/70 backdrop-blur-md focus:ring-2 focus:border-transparent transition-all duration-300 placeholder:text-gray-500/60 shadow-sm hover:shadow-md ${
+                      schoolSite === "global-kids" 
+                        ? "focus:ring-pink-500 hover:border-pink-400" 
+                        : schoolSite === "global-school"
+                        ? "focus:ring-indigo-500 hover:border-indigo-400"
+                        : schoolSite === "vishwasatya"
+                        ? "focus:ring-cyan-500 hover:border-cyan-400"
+                        : "focus:ring-violet-500 hover:border-violet-400"
+                    }`}
                   />
                 </FormControl>
                 <FormMessage className="text-sm text-gray-800" />
@@ -118,7 +126,15 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                     type="email" 
                     placeholder="Enter your email address" 
                     {...field} 
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 shadow-sm"
+                    className={`w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/70 backdrop-blur-md focus:ring-2 focus:border-transparent transition-all duration-300 placeholder:text-gray-500/60 shadow-sm hover:shadow-md ${
+                      schoolSite === "global-kids" 
+                        ? "focus:ring-pink-500 hover:border-pink-400" 
+                        : schoolSite === "global-school"
+                        ? "focus:ring-indigo-500 hover:border-indigo-400"
+                        : schoolSite === "vishwasatya"
+                        ? "focus:ring-cyan-500 hover:border-cyan-400"
+                        : "focus:ring-violet-500 hover:border-violet-400"
+                    }`}
                   />
                 </FormControl>
                 <FormMessage className="text-sm text-gray-800" />
@@ -138,7 +154,15 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                   type="tel" 
                   placeholder="Enter your phone number (optional)" 
                   {...field} 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 shadow-sm"
+                  className={`w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/70 backdrop-blur-md focus:ring-2 focus:border-transparent transition-all duration-300 placeholder:text-gray-500/60 shadow-sm hover:shadow-md ${
+                    schoolSite === "global-kids" 
+                      ? "focus:ring-pink-500 hover:border-pink-400" 
+                      : schoolSite === "global-school"
+                      ? "focus:ring-indigo-500 hover:border-indigo-400"
+                      : schoolSite === "vishwasatya"
+                      ? "focus:ring-cyan-500 hover:border-cyan-400"
+                      : "focus:ring-violet-500 hover:border-violet-400"
+                  }`}
                 />
               </FormControl>
               <FormMessage className="text-sm text-gray-800" />
@@ -157,7 +181,15 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                 defaultValue={field.value}
               >
                 <FormControl>
-                  <SelectTrigger className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 hover:border-primary-400">
+                  <SelectTrigger className={`w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/70 backdrop-blur-md focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-primary-400 ${
+                    schoolSite === "global-kids" 
+                      ? "focus:ring-pink-500" 
+                      : schoolSite === "global-school"
+                      ? "focus:ring-indigo-500"
+                      : schoolSite === "vishwasatya"
+                      ? "focus:ring-cyan-500"
+                      : "focus:ring-violet-500"
+                  }`}>
                     <SelectValue placeholder="Select an option" className="text-gray-500" />
                   </SelectTrigger>
                 </FormControl>
@@ -185,7 +217,15 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                   placeholder="Write your message here..." 
                   {...field} 
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 resize-none shadow-sm"
+                  className={`w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/70 backdrop-blur-md focus:ring-2 focus:border-transparent transition-all duration-300 placeholder:text-gray-500/60 shadow-sm hover:shadow-md ${
+                    schoolSite === "global-kids" 
+                      ? "focus:ring-pink-500 hover:border-pink-400" 
+                      : schoolSite === "global-school"
+                      ? "focus:ring-indigo-500 hover:border-indigo-400"
+                      : schoolSite === "vishwasatya"
+                      ? "focus:ring-cyan-500 hover:border-cyan-400"
+                      : "focus:ring-violet-500 hover:border-violet-400"
+                  }`}
                 />
               </FormControl>
               <FormMessage className="text-sm text-gray-800" />

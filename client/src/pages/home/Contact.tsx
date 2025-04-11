@@ -25,8 +25,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-violet-50 py-16 md:py-24" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-violet-50 via-fuchsia-50 to-violet-100 py-16 md:py-24" ref={sectionRef}>
+      {/* Decorative shapes */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-violet-200/30 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-fuchsia-200/30 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2 animate-pulse"></div>
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative">
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
