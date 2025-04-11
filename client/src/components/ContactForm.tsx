@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,7 +25,6 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
-// Form validation schema
 const contactFormSchema = z.object({
   fullName: z.string().min(2, {
     message: "Full name must be at least 2 characters.",
@@ -95,15 +95,15 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
             name="fullName"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel>Full Name</FormLabel>
+                <FormLabel className="text-sm font-medium text-gray-700">Full Name</FormLabel>
                 <FormControl>
                   <Input 
                     placeholder="Enter your full name" 
                     {...field} 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 placeholder:bg-transparent hover:border-primary-400"
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="text-sm" />
               </FormItem>
             )}
           />
@@ -113,16 +113,16 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
             name="email"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel>Email Address</FormLabel>
+                <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
                 <FormControl>
                   <Input 
                     type="email" 
                     placeholder="Enter your email address" 
                     {...field} 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 placeholder:bg-transparent hover:border-primary-400"
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="text-sm" />
               </FormItem>
             )}
           />
@@ -133,16 +133,16 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
           name="phone"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel>Phone Number</FormLabel>
+              <FormLabel className="text-sm font-medium text-gray-700">Phone Number</FormLabel>
               <FormControl>
                 <Input 
                   type="tel" 
                   placeholder="Enter your phone number (optional)" 
                   {...field} 
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 placeholder:bg-transparent hover:border-primary-400"
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-sm" />
             </FormItem>
           )}
         />
@@ -152,25 +152,25 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
           name="inquiryType"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel>Inquiry Type</FormLabel>
+              <FormLabel className="text-sm font-medium text-gray-700">Inquiry Type</FormLabel>
               <Select 
                 onValueChange={field.onChange} 
                 defaultValue={field.value}
               >
                 <FormControl>
-                  <SelectTrigger className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors">
-                    <SelectValue placeholder="Select an option" />
+                  <SelectTrigger className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 hover:border-primary-400">
+                    <SelectValue placeholder="Select an option" className="text-gray-500" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
-                  <SelectItem value="admission">Admission Information</SelectItem>
-                  <SelectItem value="general">General Inquiry</SelectItem>
-                  <SelectItem value="career">Career Opportunities</SelectItem>
-                  <SelectItem value="feedback">Feedback</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                <SelectContent className="bg-white">
+                  <SelectItem value="admission" className="hover:bg-primary-50">Admission Information</SelectItem>
+                  <SelectItem value="general" className="hover:bg-primary-50">General Inquiry</SelectItem>
+                  <SelectItem value="career" className="hover:bg-primary-50">Career Opportunities</SelectItem>
+                  <SelectItem value="feedback" className="hover:bg-primary-50">Feedback</SelectItem>
+                  <SelectItem value="other" className="hover:bg-primary-50">Other</SelectItem>
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage className="text-sm" />
             </FormItem>
           )}
         />
@@ -180,23 +180,23 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
           name="message"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel>Your Message</FormLabel>
+              <FormLabel className="text-sm font-medium text-gray-700">Your Message</FormLabel>
               <FormControl>
                 <Textarea 
                   placeholder="Write your message here..." 
                   {...field} 
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 placeholder:bg-transparent hover:border-primary-400 resize-none"
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-sm" />
             </FormItem>
           )}
         />
 
         <Button 
           type="submit" 
-          className="w-full py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium"
+          className="w-full py-4 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-lg transition-colors duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
           disabled={contactMutation.isPending}
         >
           {contactMutation.isPending ? "Sending..." : "Submit Message"}
