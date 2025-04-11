@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -9,32 +10,32 @@ const Classes = () => {
 
   const educationPrograms = [
     {
-      title: "Higher Secondary Education",
+      title: "Primary Education",
+      category: "Grades 1-4",
+      description: "Our primary education program provides a strong foundation with a unique semi-English approach, blending regional language instruction with English.",
+      subjects: ["English", "Mathematics (English)", "Science (English)", "History (Marathi)", "Geography (Marathi)", "Marathi"],
+      features: ["Bilingual teaching methodology", "Cultural integration", "Activity-based learning", "Regular parent interaction"]
+    },
+    {
+      title: "Middle School",
+      category: "Grades 5-8",
+      description: "Middle school education continues our semi-English medium approach while preparing students for advanced concepts and secondary education.",
+      subjects: ["English Literature & Grammar", "Advanced Mathematics (English)", "Science (English)", "Social Studies (Marathi)", "Computer Science (English)", "Arts & Crafts"],
+      features: ["Interactive learning", "Regular assessments", "Extra-curricular activities", "Sports & Physical Education"]
+    },
+    {
+      title: "Secondary Education",
+      category: "Grades 9-10",
+      description: "Secondary education focuses on State Board curriculum with our distinctive semi-English medium instruction, preparing students for board examinations.",
+      subjects: ["English", "Mathematics (English)", "Science (English)", "History & Political Science (Marathi)", "Geography (Marathi)", "Information Technology"],
+      features: ["Board exam preparation", "Career counseling", "Practical labs", "Remedial classes"]
+    },
+    {
+      title: "Junior College",
       category: "Grades 11-12",
-      description: "Our Higher Secondary program offers a holistic approach that combines academic excellence with values-based education, preparing students for higher studies.",
-      streams: ["Arts Stream", "Commerce Stream", "Science Stream"],
-      features: ["Traditional knowledge integration", "Modern teaching methodologies", "Career guidance", "Personality development"]
-    },
-    {
-      title: "Bachelor's Programs",
-      category: "Undergraduate",
-      description: "Our undergraduate programs combine rigorous academics with practical experience, creating well-rounded professionals with strong ethical foundations.",
-      streams: ["Bachelor of Arts (BA)", "Bachelor of Commerce (BCom)", "Bachelor of Science (BSc)", "Bachelor of Computer Applications (BCA)"],
-      features: ["Industry collaborations", "Research opportunities", "Cultural studies", "Leadership development"]
-    },
-    {
-      title: "Master's Programs",
-      category: "Postgraduate",
-      description: "Our postgraduate programs focus on advanced knowledge and specialized skills, with emphasis on research, innovation, and professional expertise.",
-      streams: ["Master of Arts (MA)", "Master of Commerce (MCom)", "Master of Science (MSc)", "Master of Computer Applications (MCA)"],
-      features: ["Advanced research methodology", "Industry internships", "Specialized training", "Global exposure"]
-    },
-    {
-      title: "Certificate Programs",
-      category: "Skill Enhancement",
-      description: "Short-term certificate programs designed to enhance specific skills, provide specialized knowledge, or explore emerging fields.",
-      streams: ["Digital Marketing", "Sustainable Development", "Indian Philosophy", "Artificial Intelligence", "Cultural Heritage Studies"],
-      features: ["Flexible scheduling", "Industry experts as faculty", "Practical workshops", "Certification"]
+      description: "Our Junior College offers Science and Commerce streams following the State Board curriculum, preparing students for higher education.",
+      streams: ["Science Stream", "Commerce Stream"],
+      features: ["Experienced faculty", "Modern laboratories", "Entrance exam preparation", "Career guidance"]
     }
   ];
 
@@ -71,8 +72,8 @@ const Classes = () => {
           </h2>
           <div className="w-20 h-1 bg-cyan-600 mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-gray-600 text-lg">
-            Our comprehensive educational programs blend traditional wisdom with contemporary knowledge,
-            preparing students for both global opportunities and cultural rootedness.
+            Our unique semi-English medium curriculum combines the best of both worlds,
+            offering subjects in English and Marathi to ensure strong linguistic and cultural foundations.
           </p>
         </motion.div>
         
@@ -102,14 +103,16 @@ const Classes = () => {
                   <p className="text-gray-600 mb-4">{program.description}</p>
                   
                   <div className="mb-4">
-                    <h4 className="font-medium text-gray-800 mb-2">Streams/Specializations:</h4>
+                    <h4 className="font-medium text-gray-800 mb-2">
+                      {program.subjects ? "Key Subjects:" : "Available Streams:"}
+                    </h4>
                     <div className="flex flex-wrap gap-2">
-                      {program.streams.map((stream, i) => (
+                      {(program.subjects || program.streams)?.map((item, i) => (
                         <span 
                           key={i} 
                           className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full"
                         >
-                          {stream}
+                          {item}
                         </span>
                       ))}
                     </div>
@@ -127,24 +130,6 @@ const Classes = () => {
               </Card>
             </motion.div>
           ))}
-        </motion.div>
-        
-        <motion.div 
-          className="mt-12 text-center"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <p className="text-gray-600 mb-4">
-            Beyond academics, we offer various extracurricular activities, workshops, and seminars
-            to ensure holistic development of our students.
-          </p>
-          <a 
-            href="#contact" 
-            className="inline-flex items-center justify-center bg-cyan-600 hover:bg-cyan-700 text-white font-medium px-6 py-3 rounded-lg transition-colors"
-          >
-            Request Program Details
-          </a>
         </motion.div>
       </div>
     </section>
