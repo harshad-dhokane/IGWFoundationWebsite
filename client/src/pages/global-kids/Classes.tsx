@@ -96,23 +96,21 @@ const Classes = () => {
               key={index}
               variants={itemVariants}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm border-2 border-pink-100">
-                <CardHeader className="bg-gradient-to-r from-pink-50 to-pink-100/50 border-b-2 border-pink-200">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="bg-pink-50 border-b border-pink-100">
                   <div className="flex justify-between items-start">
                     <div>
-                      <CardTitle className="text-2xl font-bold text-gray-800 mb-2">{program.title}</CardTitle>
-                      <CardDescription className="text-pink-600 font-semibold text-lg mt-1">
+                      <CardTitle className="text-xl text-gray-800">{program.title}</CardTitle>
+                      <CardDescription className="text-pink-600 font-medium mt-1">
                         {program.ageRange}
                       </CardDescription>
                     </div>
-                    <span className="bg-pink-200 text-pink-800 text-sm px-4 py-2 rounded-full font-medium shadow-sm">
+                    <span className="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">
                       {program.schedule}
                     </span>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-8 relative">
-                  {/* Decorative element */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-pink-100/30 rounded-full blur-2xl"></div>
+                <CardContent className="pt-6">
                   <p className="text-gray-600 mb-4">{program.description}</p>
                   <div>
                     <h4 className="font-medium text-gray-800 mb-2">Key Activities:</h4>

@@ -87,20 +87,18 @@ const Classes = () => {
               key={index}
               variants={itemVariants}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm border-2 border-indigo-100">
-                <CardHeader className="bg-gradient-to-r from-indigo-50 to-indigo-100/50 border-b-2 border-indigo-200">
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="bg-indigo-50 border-b border-indigo-100">
                   <div className="flex justify-between items-start">
                     <div>
-                      <CardTitle className="text-2xl font-bold text-gray-800 mb-2">{program.title}</CardTitle>
-                      <CardDescription className="text-indigo-600 font-semibold text-lg mt-1">
+                      <CardTitle className="text-xl text-gray-800">{program.title}</CardTitle>
+                      <CardDescription className="text-indigo-600 font-medium mt-1">
                         {program.grades}
                       </CardDescription>
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-8 relative">
-                  {/* Decorative element */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-indigo-100/30 rounded-full blur-2xl"></div>
+                <CardContent className="pt-6">
                   <p className="text-gray-600 mb-4">{program.description}</p>
                   
                   <div className="mb-4">
