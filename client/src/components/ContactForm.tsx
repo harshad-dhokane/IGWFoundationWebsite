@@ -195,7 +195,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
 
         <Button 
           type="submit" 
-          className="w-full py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] mt-4"
+          className="w-full py-4 bg-blue-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] mt-4"
           disabled={contactMutation.isPending}
         >
           {contactMutation.isPending ? "Sending..." : "Submit Message"}
