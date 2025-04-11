@@ -133,12 +133,14 @@
   animation: sparkle 3s ease-in-out infinite;
 }
 
+/* Enhanced background patterns */
 .mesh-gradient-pink {
   background-color: hsla(0, 100%, 100%, 1);
   background-image:
     radial-gradient(at 40% 20%, hsla(330, 100%, 76%, 0.3) 0px, transparent 50%),
     radial-gradient(at 80% 0%, hsla(300, 100%, 76%, 0.3) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.3) 0px, transparent 50%);
+    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.3) 0px, transparent 50%),
+    repeating-linear-gradient(45deg, hsla(330, 100%, 76%, 0.05) 0px, hsla(330, 100%, 76%, 0.05) 2px, transparent 2px, transparent 10px);
 }
 
 .mesh-gradient-indigo {
@@ -146,7 +148,8 @@
   background-image:
     radial-gradient(at 40% 20%, hsla(240, 100%, 76%, 0.3) 0px, transparent 50%),
     radial-gradient(at 80% 0%, hsla(220, 100%, 76%, 0.3) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, hsla(260, 100%, 93%, 0.3) 0px, transparent 50%);
+    radial-gradient(at 0% 50%, hsla(260, 100%, 93%, 0.3) 0px, transparent 50%),
+    repeating-linear-gradient(-45deg, hsla(240, 100%, 76%, 0.05) 0px, hsla(240, 100%, 76%, 0.05) 2px, transparent 2px, transparent 10px);
 }
 
 .mesh-gradient-cyan {
@@ -154,7 +157,77 @@
   background-image:
     radial-gradient(at 40% 20%, hsla(180, 100%, 76%, 0.3) 0px, transparent 50%),
     radial-gradient(at 80% 0%, hsla(190, 100%, 76%, 0.3) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, hsla(170, 100%, 93%, 0.3) 0px, transparent 50%);
+    radial-gradient(at 0% 50%, hsla(170, 100%, 93%, 0.3) 0px, transparent 50%),
+    repeating-linear-gradient(90deg, hsla(180, 100%, 76%, 0.05) 0px, hsla(180, 100%, 76%, 0.05) 2px, transparent 2px, transparent 10px);
+}
+
+/* Decorative patterns */
+.pattern-grid {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+}
+
+.pattern-dots {
+  background-image: radial-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* School-specific patterns */
+.pattern-kids {
+  background-image: 
+    radial-gradient(circle at 10px 10px, rgba(236, 72, 153, 0.1) 3px, transparent 3px),
+    radial-gradient(circle at 20px 20px, rgba(244, 114, 182, 0.1) 4px, transparent 4px);
+  background-size: 30px 30px;
+}
+
+.pattern-school {
+  background-image: 
+    linear-gradient(45deg, rgba(99, 102, 241, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(99, 102, 241, 0.1) 25%, transparent 25%);
+  background-size: 20px 20px;
+}
+
+.pattern-vishwasatya {
+  background-image: 
+    repeating-radial-gradient(circle at 0 0, transparent 0, rgba(34, 211, 238, 0.1) 10px),
+    repeating-linear-gradient(rgba(34, 211, 238, 0.1), rgba(34, 211, 238, 0.1));
+  background-size: 30px 30px;
+}
+
+/* Animated backgrounds */
+.bg-animate {
+  animation: bgShift 15s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes bgShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Floating elements */
+.floating-element {
+  position: absolute;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.floating-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Glass morphism effects */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
 }
 
 .animate-blob {
