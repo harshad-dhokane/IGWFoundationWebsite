@@ -105,7 +105,7 @@ const Contact = () => {
             </motion.div>
 
             <motion.div 
-              className="bg-primary-600 text-white rounded-xl shadow-lg p-8"
+              className="bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white rounded-xl shadow-lg p-8"
               variants={itemVariants}
             >
               <h3 className="font-montserrat font-semibold text-xl mb-4">Office Hours</h3>
