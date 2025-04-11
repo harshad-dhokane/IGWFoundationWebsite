@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -48,7 +47,7 @@ interface ContactFormProps {
 
 const ContactForm = ({ schoolSite }: ContactFormProps) => {
   const { toast } = useToast();
-  
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -100,7 +99,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                   <Input 
                     placeholder="Enter your full name" 
                     {...field} 
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 placeholder:bg-transparent hover:border-primary-400"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 shadow-sm"
                   />
                 </FormControl>
                 <FormMessage className="text-sm" />
@@ -119,7 +118,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                     type="email" 
                     placeholder="Enter your email address" 
                     {...field} 
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 placeholder:bg-transparent hover:border-primary-400"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 shadow-sm"
                   />
                 </FormControl>
                 <FormMessage className="text-sm" />
@@ -139,7 +138,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                   type="tel" 
                   placeholder="Enter your phone number (optional)" 
                   {...field} 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 placeholder:bg-transparent hover:border-primary-400"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 shadow-sm"
                 />
               </FormControl>
               <FormMessage className="text-sm" />
@@ -186,7 +185,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                   placeholder="Write your message here..." 
                   {...field} 
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 placeholder:bg-transparent hover:border-primary-400 resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 resize-none shadow-sm"
                 />
               </FormControl>
               <FormMessage className="text-sm" />
