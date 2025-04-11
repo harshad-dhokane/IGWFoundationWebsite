@@ -81,17 +81,19 @@ const Navbar = () => {
   }
   
   const NavLink = ({ href, className = "", children }: NavLinkProps) => {
-    // Check if it's a hash link
+    const [location] = useLocation();
     const isHashLink = href.startsWith('#');
+    const fullPath = isHashLink ? `${location}${href}` : href;
     
     if (isHashLink) {
       return (
         <a 
-          href={href} 
+          href={fullPath}
           className={className}
           onClick={(e: React.MouseEvent) => {
             e.preventDefault();
-            const element = document.querySelector(href);
+            const targetId = href.substring(1);
+            const element = document.getElementById(targetId);
             if (element) {
               element.scrollIntoView({ behavior: 'smooth' });
             }
@@ -103,7 +105,7 @@ const Navbar = () => {
     }
     
     return (
-      <Link href={href}>
+      <Link href={fullPath}>
         <span className={`cursor-pointer ${className}`}>{children}</span>
       </Link>
     );
