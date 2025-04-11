@@ -57,12 +57,12 @@ const Navbar = () => {
   const menuItems = isGlobalKids || isGlobalSchool || isVishwasatya
     ? [
         { text: "Home", href: isGlobalKids ? "/global-kids" : isGlobalSchool ? "/global-school" : "/vishwasatya" },
-        { text: "About", href: `${location}#about` },
-        { text: "Gallery", href: `${location}#gallery` },
-        { text: "Classes", href: `${location}#classes` },
-        { text: "Notifications", href: `${location}#notifications` },
-        { text: "Admissions", href: `${location}#admissions` },
-        { text: "Contact", href: `${location}#contact` },
+        { text: "About", href: "#about" },
+        { text: "Gallery", href: "#gallery" },
+        { text: "Classes", href: "#classes" },
+        { text: "Notifications", href: "#notifications" },
+        { text: "Admissions", href: "#admissions" },
+        { text: "Contact", href: "#contact" },
         { text: "IGW Foundation", href: "/" },
       ]
     : [
@@ -83,7 +83,7 @@ const Navbar = () => {
   const NavLink = ({ href, className = "", children }: NavLinkProps) => {
     const [location] = useLocation();
     const isHashLink = href.startsWith('#');
-    const fullPath = isHashLink ? `${location}${href}` : href;
+    const fullPath = isHashLink ? href : href;
     
     if (isHashLink) {
       return (
@@ -96,6 +96,8 @@ const Navbar = () => {
             const element = document.getElementById(targetId);
             if (element) {
               element.scrollIntoView({ behavior: 'smooth' });
+              // Close mobile menu if open
+              setIsMobileMenuOpen(false);
             }
           }}
         >
