@@ -55,6 +55,42 @@ const Footer = () => {
     newsletterMutation.mutate(email);
   };
 
+  // Custom Link component to avoid nesting <a> tags
+  interface FooterLinkProps {
+    href: string;
+    className?: string;
+    children: React.ReactNode;
+  }
+  
+  const FooterLink = ({ href, className = "", children }: FooterLinkProps) => {
+    // Check if it's a hash link
+    const isHashLink = href.startsWith('#');
+    
+    if (isHashLink) {
+      return (
+        <a 
+          href={href} 
+          className={className}
+          onClick={(e: React.MouseEvent) => {
+            e.preventDefault();
+            const element = document.querySelector(href);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
+          {children}
+        </a>
+      );
+    }
+    
+    return (
+      <Link href={href}>
+        <span className={`cursor-pointer ${className}`}>{children}</span>
+      </Link>
+    );
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -90,28 +126,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Our Schools</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/global-kids">
-                  <a className="text-gray-400 hover:text-white transition-colors flex items-center">
-                    <ChevronRight className="h-4 w-4 mr-2" />
-                    Global Kids
-                  </a>
-                </Link>
+                <FooterLink href="/global-kids" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="h-4 w-4 mr-2" />
+                  Global Kids
+                </FooterLink>
               </li>
               <li>
-                <Link href="/global-school">
-                  <a className="text-gray-400 hover:text-white transition-colors flex items-center">
-                    <ChevronRight className="h-4 w-4 mr-2" />
-                    Global School & Jr College
-                  </a>
-                </Link>
+                <FooterLink href="/global-school" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="h-4 w-4 mr-2" />
+                  Global School & Jr College
+                </FooterLink>
               </li>
               <li>
-                <Link href="/vishwasatya">
-                  <a className="text-gray-400 hover:text-white transition-colors flex items-center">
-                    <ChevronRight className="h-4 w-4 mr-2" />
-                    Vishwasatya Vidyaniketan
-                  </a>
-                </Link>
+                <FooterLink href="/vishwasatya" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <ChevronRight className="h-4 w-4 mr-2" />
+                  Vishwasatya Vidyaniketan
+                </FooterLink>
               </li>
             </ul>
           </div>
