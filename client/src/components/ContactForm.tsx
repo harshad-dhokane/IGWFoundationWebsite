@@ -94,7 +94,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
             name="fullName"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className="text-sm font-medium text-gray-700">Full Name</FormLabel>
+                <FormLabel className="text-sm font-medium text-gray-800">Full Name</FormLabel>
                 <FormControl>
                   <Input 
                     placeholder="Enter your full name" 
@@ -102,7 +102,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 shadow-sm"
                   />
                 </FormControl>
-                <FormMessage className="text-sm" />
+                <FormMessage className="text-sm text-gray-800" />
               </FormItem>
             )}
           />
@@ -112,7 +112,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
             name="email"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
+                <FormLabel className="text-sm font-medium text-gray-800">Email Address</FormLabel>
                 <FormControl>
                   <Input 
                     type="email" 
@@ -121,7 +121,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 shadow-sm"
                   />
                 </FormControl>
-                <FormMessage className="text-sm" />
+                <FormMessage className="text-sm text-gray-800" />
               </FormItem>
             )}
           />
@@ -132,7 +132,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
           name="phone"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel className="text-sm font-medium text-gray-700">Phone Number</FormLabel>
+              <FormLabel className="text-sm font-medium text-gray-800">Phone Number</FormLabel>
               <FormControl>
                 <Input 
                   type="tel" 
@@ -141,7 +141,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 shadow-sm"
                 />
               </FormControl>
-              <FormMessage className="text-sm" />
+              <FormMessage className="text-sm text-gray-800" />
             </FormItem>
           )}
         />
@@ -151,7 +151,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
           name="inquiryType"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel className="text-sm font-medium text-gray-700">Inquiry Type</FormLabel>
+              <FormLabel className="text-sm font-medium text-gray-800">Inquiry Type</FormLabel>
               <Select 
                 onValueChange={field.onChange} 
                 defaultValue={field.value}
@@ -162,14 +162,14 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="bg-white">
-                  <SelectItem value="admission" className="hover:bg-primary-50">Admission Information</SelectItem>
-                  <SelectItem value="general" className="hover:bg-primary-50">General Inquiry</SelectItem>
-                  <SelectItem value="career" className="hover:bg-primary-50">Career Opportunities</SelectItem>
-                  <SelectItem value="feedback" className="hover:bg-primary-50">Feedback</SelectItem>
-                  <SelectItem value="other" className="hover:bg-primary-50">Other</SelectItem>
+                  <SelectItem value="admission" className="hover:bg-primary-50 text-gray-800">Admission Information</SelectItem>
+                  <SelectItem value="general" className="hover:bg-primary-50 text-gray-800">General Inquiry</SelectItem>
+                  <SelectItem value="career" className="hover:bg-primary-50 text-gray-800">Career Opportunities</SelectItem>
+                  <SelectItem value="feedback" className="hover:bg-primary-50 text-gray-800">Feedback</SelectItem>
+                  <SelectItem value="other" className="hover:bg-primary-50 text-gray-800">Other</SelectItem>
                 </SelectContent>
               </Select>
-              <FormMessage className="text-sm" />
+              <FormMessage className="text-sm text-gray-800" />
             </FormItem>
           )}
         />
@@ -179,7 +179,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
           name="message"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel className="text-sm font-medium text-gray-700">Your Message</FormLabel>
+              <FormLabel className="text-sm font-medium text-gray-800">Your Message</FormLabel>
               <FormControl>
                 <Textarea 
                   placeholder="Write your message here..." 
@@ -188,7 +188,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-500/60 hover:border-primary-400 resize-none shadow-sm"
                 />
               </FormControl>
-              <FormMessage className="text-sm" />
+              <FormMessage className="text-sm text-gray-800" />
             </FormItem>
           )}
         />
