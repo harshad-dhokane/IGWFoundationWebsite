@@ -15,13 +15,25 @@ const Navbar = () => {
 
   // Set theme color based on current site
   let themeColor = "primary";
+  let themeBgColor = "bg-primary-500";
+  let themeHoverColor = "hover:text-primary-500";
   
   if (isGlobalKids) {
-    themeColor = "pink-500";
+    themeColor = "text-pink-500";
+    themeBgColor = "bg-pink-500";
+    themeHoverColor = "hover:text-pink-500";
   } else if (isGlobalSchool) {
-    themeColor = "indigo-600";
+    themeColor = "text-indigo-600";
+    themeBgColor = "bg-indigo-600";
+    themeHoverColor = "hover:text-indigo-600";
   } else if (isVishwasatya) {
-    themeColor = "cyan-600";
+    themeColor = "text-cyan-600";
+    themeBgColor = "bg-cyan-600";
+    themeHoverColor = "hover:text-cyan-600";
+  } else {
+    themeColor = "text-violet-600";
+    themeBgColor = "bg-violet-600";
+    themeHoverColor = "hover:text-violet-600";
   }
 
   useEffect(() => {
@@ -61,38 +73,74 @@ const Navbar = () => {
         { text: "Contact", href: "#contact" },
       ];
 
+  // Custom Link component to avoid nesting <a> tags
+  interface NavLinkProps {
+    href: string;
+    className?: string;
+    children: React.ReactNode;
+  }
+  
+  const NavLink = ({ href, className = "", children }: NavLinkProps) => {
+    // Check if it's a hash link
+    const isHashLink = href.startsWith('#');
+    
+    if (isHashLink) {
+      return (
+        <a 
+          href={href} 
+          className={className}
+          onClick={(e: React.MouseEvent) => {
+            e.preventDefault();
+            const element = document.querySelector(href);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
+          {children}
+        </a>
+      );
+    }
+    
+    return (
+      <Link href={href}>
+        <span className={`cursor-pointer ${className}`}>{children}</span>
+      </Link>
+    );
+  };
+
   return (
     <nav
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-white/90 py-3"
+        isScrolled ? "bg-white shadow-md py-2" : "bg-white/90 backdrop-blur-sm py-3"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href={isGlobalKids || isGlobalSchool || isVishwasatya ? location : "/"}>
-            <a className="flex items-center space-x-2">
-              <span className={`text-${themeColor}`}>
-                <BookOpen className="h-8 w-8" />
-              </span>
-              <span className="font-montserrat font-bold text-xl text-gray-800">
-                {isGlobalKids 
-                  ? "Global Kids" 
-                  : isGlobalSchool 
-                  ? "Global School & Jr College" 
-                  : isVishwasatya 
-                  ? "Vishwasatya Vidyaniketan" 
-                  : "IGW Foundation"}
-              </span>
-            </a>
-          </Link>
+          <NavLink href={isGlobalKids || isGlobalSchool || isVishwasatya ? location : "/"} className="flex items-center space-x-2">
+            <span className={themeColor}>
+              <BookOpen className="h-8 w-8" />
+            </span>
+            <span className="font-montserrat font-bold text-xl text-gray-800">
+              {isGlobalKids 
+                ? "Global Kids" 
+                : isGlobalSchool 
+                ? "Global School & Jr College" 
+                : isVishwasatya 
+                ? "Vishwasatya Vidyaniketan" 
+                : "IGW Foundation"}
+            </span>
+          </NavLink>
 
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item, index) => (
-              <Link key={index} href={item.href}>
-                <a className="font-medium text-gray-700 hover:text-primary-500 transition-colors">
-                  {item.text}
-                </a>
-              </Link>
+              <NavLink 
+                key={index} 
+                href={item.href} 
+                className={`font-medium text-gray-700 ${themeHoverColor} transition-colors`}
+              >
+                {item.text}
+              </NavLink>
             ))}
           </div>
 
@@ -116,11 +164,13 @@ const Navbar = () => {
             >
               <div className="flex flex-col space-y-4">
                 {menuItems.map((item, index) => (
-                  <Link key={index} href={item.href}>
-                    <a className="font-medium text-gray-700 hover:text-primary-500 transition-colors py-2 px-2 rounded-md hover:bg-gray-50">
-                      {item.text}
-                    </a>
-                  </Link>
+                  <NavLink 
+                    key={index} 
+                    href={item.href} 
+                    className={`font-medium text-gray-700 ${themeHoverColor} transition-colors py-2 px-2 rounded-md hover:bg-gray-50`}
+                  >
+                    {item.text}
+                  </NavLink>
                 ))}
               </div>
             </motion.div>
