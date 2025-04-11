@@ -115,11 +115,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-white/90 backdrop-blur-sm py-3"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300 rounded-2xl ${
+        isScrolled ? "bg-white/80 shadow-lg backdrop-blur-md py-2" : "bg-white/60 backdrop-blur-sm py-3"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <NavLink href={isGlobalKids || isGlobalSchool || isVishwasatya ? location : "/"} className="flex items-center space-x-2">
             <span className={themeColor}>
