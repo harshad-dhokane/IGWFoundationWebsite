@@ -203,3 +203,79 @@
 .contact-form {
   color: #1f2937;
 }
+
+/* Enhanced animation utilities */
+.animate-float-vertical {
+  animation: float-vertical 6s ease-in-out infinite;
+}
+
+.animate-float-horizontal {
+  animation: float-horizontal 8s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 12s linear infinite;
+}
+
+@keyframes float-vertical {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-horizontal {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(15px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.96); opacity: 0.8; }
+}
+
+/* Decorative patterns */
+.pattern-dots {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.pattern-grid {
+  background-image: linear-gradient(currentColor 1px, transparent 1px),
+    linear-gradient(to right, currentColor 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Enhanced gradient backgrounds */
+.mesh-gradient-violet {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(167, 139, 250, 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(196, 181, 253, 0.15) 0px, transparent 50%);
+}
+
+.mesh-gradient-pink {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(at 40% 20%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(244, 114, 182, 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(251, 207, 232, 0.15) 0px, transparent 50%);
+}
+
+.mesh-gradient-cyan {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(at 40% 20%, rgba(34, 211, 238, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(103, 232, 249, 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(165, 243, 252, 0.15) 0px, transparent 50%);
+}
+
+/* Glass effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}

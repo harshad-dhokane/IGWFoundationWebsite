@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative overflow-hidden bg-gradient-to-r from-pink-500 via-pink-400 to-rose-500 text-white"
+      className="relative overflow-hidden bg-gradient-to-r from-pink-600 via-rose-500 to-pink-500 text-white min-h-screen flex items-center"
       style={{
         backgroundSize: "200% 200%",
         animation: "gradientBg 10s ease infinite",
@@ -19,7 +19,7 @@ const Hero = () => {
         <div className="absolute top-20 left-20 w-32 h-32 bg-pink-300/30 rounded-full floating blur-xl"></div>
         <div className="absolute top-40 right-20 w-24 h-24 bg-rose-300/30 rounded-full floating-reverse blur-lg"></div>
         <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-pink-200/30 rounded-full floating-slow blur-xl"></div>
-        
+
         {/* Sparkles */}
         <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-yellow-200 rounded-full sparkle"></div>
         <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-yellow-200 rounded-full sparkle" style={{ animationDelay: "1s" }}></div>
@@ -57,7 +57,7 @@ const Hero = () => {
               </Button>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

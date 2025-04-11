@@ -19,7 +19,7 @@ const GlobalSchool = () => {
   }, [setFirstMount]);
 
   return (
-    <div className="bg-white mesh-gradient animated-gradient">
+    <div className="bg-white mesh-gradient-violet animated-gradient">
       <Hero />
       <About />
       <Gallery />

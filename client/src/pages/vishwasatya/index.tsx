@@ -19,7 +19,7 @@ const Vishwasatya = () => {
   }, [setFirstMount]);
 
   return (
-    <div className="bg-white mesh-gradient animated-gradient">
+    <div className="bg-white mesh-gradient-cyan animated-gradient">
       <Hero />
       <About />
       <Gallery />

@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative overflow-hidden bg-gradient-to-r from-cyan-600 via-teal-500 to-cyan-500 text-white"
+      className="relative overflow-hidden bg-gradient-to-r from-cyan-600 via-teal-500 to-cyan-500 text-white min-h-screen flex items-center"
       style={{
         backgroundSize: "200% 200%",
         animation: "gradientBg 10s ease infinite",
