@@ -195,7 +195,15 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
 
         <Button 
           type="submit" 
-          className="w-full py-4 bg-blue-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] mt-4"
+          className={`w-full py-4 text-white font-semibold rounded-lg shadow-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] mt-4 ${
+            schoolSite === "global-kids" 
+              ? "bg-pink-600 hover:bg-pink-700" 
+              : schoolSite === "global-school"
+              ? "bg-indigo-600 hover:bg-indigo-700"
+              : schoolSite === "vishwasatya"
+              ? "bg-cyan-600 hover:bg-cyan-700"
+              : "bg-violet-600 hover:bg-violet-700"
+          }`}
           disabled={contactMutation.isPending}
         >
           {contactMutation.isPending ? "Sending..." : "Submit Message"}

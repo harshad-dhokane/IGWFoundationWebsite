@@ -25,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-gray-100 py-16 md:py-24" ref={sectionRef}>
+    <section id="contact" className="bg-violet-50 py-16 md:py-24" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
