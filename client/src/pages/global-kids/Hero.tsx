@@ -8,12 +8,23 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="bg-gradient-to-r from-pink-500 via-pink-400 to-rose-500 text-white"
+      className="relative overflow-hidden bg-gradient-to-r from-pink-500 via-pink-400 to-rose-500 text-white"
       style={{
         backgroundSize: "200% 200%",
         animation: "gradientBg 10s ease infinite",
       }}
     >
+      {/* Decorative floating elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-pink-300/30 rounded-full floating blur-xl"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-rose-300/30 rounded-full floating-reverse blur-lg"></div>
+        <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-pink-200/30 rounded-full floating-slow blur-xl"></div>
+        
+        {/* Sparkles */}
+        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-yellow-200 rounded-full sparkle"></div>
+        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-yellow-200 rounded-full sparkle" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-yellow-200 rounded-full sparkle" style={{ animationDelay: "2s" }}></div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
