@@ -73,32 +73,32 @@ const Contact = () => {
 
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <div className="bg-primary-100 p-2 rounded-full text-primary-600 mt-1">
+                  <div className="bg-violet-100 p-2 rounded-full text-violet-600 mt-1">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-800">Main Office</h4>
-                    <p className="text-gray-700">123 Education Avenue<br />Mumbai, Maharashtra 400001</p>
+                    <p className="text-gray-600">123 Education Avenue<br />Mumbai, Maharashtra 400001</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <div className="bg-primary-100 p-2 rounded-full text-primary-600 mt-1">
+                  <div className="bg-violet-100 p-2 rounded-full text-violet-600 mt-1">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-800">Phone</h4>
-                    <p className="text-gray-700">+91 22 1234 5678</p>
+                    <p className="text-gray-600">+91 22 1234 5678</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <div className="bg-primary-100 p-2 rounded-full text-primary-600 mt-1">
+                  <div className="bg-violet-100 p-2 rounded-full text-violet-600 mt-1">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-800">Email</h4>
-                    <p className="text-gray-700">info@igwfoundation.org</p>
+                    <p className="text-gray-600">info@igwfoundation.org</p>
                   </div>
                 </div>
               </div>
