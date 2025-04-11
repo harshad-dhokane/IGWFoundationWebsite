@@ -157,7 +157,7 @@ const ContactForm = ({ schoolSite }: ContactFormProps) => {
                 defaultValue={field.value}
               >
                 <FormControl>
-                  <SelectTrigger className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 hover:border-primary-400">
+                  <SelectTrigger className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 hover:border-primary-400">
                     <SelectValue placeholder="Select an option" className="text-gray-500" />
                   </SelectTrigger>
                 </FormControl>
