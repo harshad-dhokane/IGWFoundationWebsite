@@ -68,7 +68,17 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="bg-pink-50 py-16 md:py-24" ref={sectionRef}>
+    <section id="gallery" className="relative overflow-hidden bg-pink-50 py-16 md:py-24" ref={sectionRef}>
+      {/* Decorative background */}
+      <div className="absolute inset-0 mesh-gradient-soft"></div>
+      <div className="absolute inset-0 pattern-grid opacity-20"></div>
+      
+      {/* Floating shapes */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-10 right-[10%] w-20 h-20 bg-pink-200/40 shape-triangle animate-float"></div>
+        <div className="absolute bottom-20 left-[15%] w-16 h-16 bg-pink-300/40 shape-star animate-float-reverse"></div>
+        <div className="absolute top-1/2 right-[20%] w-24 h-24 bg-pink-100/40 shape-diamond animate-pulse-gentle"></div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
